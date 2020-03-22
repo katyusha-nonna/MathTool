@@ -20,7 +20,7 @@
 #ifndef MYSYMBOLIC_H
 #define MYSYMBOLIC_H
 
-namespace Unility
+namespace Utility
 {
 	namespace Symbolic
 	{

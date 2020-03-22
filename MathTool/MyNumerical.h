@@ -30,7 +30,7 @@
 #ifndef MYNUMERICAL_H
 #define MYNUMERICAL_H
 
-namespace Unility
+namespace Utility
 {
 	namespace Numerical
 	{
@@ -47,11 +47,11 @@ namespace Unility
 			// 返回区间左端点
 			std::pair<TX, bool> Begin() { return _begin; }
 			// 设置区间左端点
-			void Begin(TX x1, bool isClosed) { _begin = { std::move(x1), isClosed }; }
+			void Begin(TX x1, bool isClosed) { _begin = { x1, isClosed }; }
 			// 返回区间右端点
 			std::pair<TX, bool> End() { return _end; }
 			// 设置区间右端点
-			void End(TX x2, bool isClosed) { _end = { std::move(x2), isClosed }; }
+			void End(TX x2, bool isClosed) { _end = { x2, isClosed }; }
 			// 判断是否在区间内
 			bool Contain(TX x)
 			{

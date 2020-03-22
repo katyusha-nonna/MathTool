@@ -34,7 +34,7 @@
 # ifndef MYSPRASE_H
 # define MYSPRASE_H
 
-namespace Unility
+namespace Utility
 {
 	namespace Sprase
 	{

@@ -1,6 +1,6 @@
 #include "MyNumerical.h"
 
-using namespace Unility;
+using namespace Utility;
 
 /*
 	这里给出迭代公式
@@ -134,15 +134,15 @@ Numerical::SegmentFunction<double, double> Numerical::CubicSplineInterpolation(s
 	// lambda对象，用途：计算M系数
 	auto calculateM = [&]() {
 		std::vector<double> vLambda(N);
-		std::vector<double> vMiu(N);
+		std::vector<double> vMu(N);
 		std::vector<double> vConst(N + 1, 2);
 		std::vector<double> d(N + 1);
-		// 形成vMiu
+		// 形成vMu
 		for (size_t i = 0; i < N-1; i++)
 		{
-			vMiu[i] = h[i + 1] / (h[i + 1] + h[i + 2]);
+			vMu[i] = h[i + 1] / (h[i + 1] + h[i + 2]);
 		}
-		vMiu[N - 1] = 1;
+		vMu[N - 1] = 1;
 		// 形成vLambda
 		for (size_t i = 1; i < N; i++)
 		{
@@ -158,7 +158,7 @@ Numerical::SegmentFunction<double, double> Numerical::CubicSplineInterpolation(s
 		d[0] = 6 * ((points[1].second - points[0].second) / h[1] - conditions.first) / h[1];
 		d[N] = 6 * (conditions.second - (points[N].second - points[N - 1].second) / h[N]) / h[N];
 		// 三对角矩阵
-		Sprase::SpraseTD<double> matrixA(std::move(vMiu), std::move(vConst), std::move(vLambda));
+		Sprase::SpraseTD<double> matrixA(std::move(vMu), std::move(vConst), std::move(vLambda));
 		// 求解M
 		M = Sprase::CMSolver(matrixA, d);	
 	};
@@ -179,7 +179,9 @@ Numerical::SegmentFunction<double, double> Numerical::CubicSplineInterpolation(s
 			A3 = (M[i] - M[i - 1]) / h[i] / 6;
 			// 添加分段函数
 			auto func = [A0, A1, A2, A3](double x)->double {
-				return A0 + A1 * x + A2 * x*x + A3 * x*x*x;
+				// return A0 + A1 * x + A2 * x*x + A3 * x*x*x;
+				// 用秦九昭算法改写
+				return ((A3*x + A2)*x + A1)*x + A0;
 			};
 			// 添加分段函数描述
 			std::string des = std::to_string(A0) + " + " + std::to_string(A1) + " * x + " + std::to_string(A2) + " * x^2 +" + std::to_string(A3) + " * x^3";

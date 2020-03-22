@@ -1,6 +1,6 @@
 #include "MySprase.h"
 
-using namespace Unility;
+using namespace Utility;
 
 std::vector<double> Sprase::GEKernel(Matrix<double>& A, std::vector<double>& b)
 {

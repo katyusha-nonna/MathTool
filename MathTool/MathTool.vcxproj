@@ -152,10 +152,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MathTool.cpp" />
+    <ClCompile Include="MyOptimalize.cpp" />
     <ClCompile Include="MySprase.cpp" />
     <ClCompile Include="MyNumerical.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MyOptimalize.h" />
     <ClInclude Include="MySprase.h" />
     <ClInclude Include="MyNumerical.h" />
     <ClInclude Include="MySymbolic.h" />
