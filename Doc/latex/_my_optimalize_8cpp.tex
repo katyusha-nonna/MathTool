@@ -1,0 +1,186 @@
+\hypertarget{_my_optimalize_8cpp}{}\doxysection{Math\+Tool/\+My\+Optimalize.cpp 文件参考}
+\label{_my_optimalize_8cpp}\index{MathTool/MyOptimalize.cpp@{MathTool/MyOptimalize.cpp}}
+{\ttfamily \#include \char`\"{}My\+Optimalize.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Eigen/\+Eigen$>$}\newline
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_my_optimalize_8cpp_ad7945e2b508cf7c6d0fc2cf6d84f9dd9}{D\+E\+I\+G\+E\+N\+\_\+\+M\+P\+L2\+\_\+\+O\+N\+LY}}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{_my_optimalize_8cpp_a3f6d372d60229b45eebbdda736c1b7d8}{L\+P\+Barrier\+Interior\+Point\+Kernel}} (const Eigen\+::\+Vector\+Xd \&c, const Eigen\+::\+Matrix\+Xd \&A, const Eigen\+::\+Vector\+Xd \&b, Eigen\+::\+Vector\+Xd \&x, double t, double mu, double error)
+\item 
+double \mbox{\hyperlink{_my_optimalize_8cpp_af3a7d3362eaf6453409bd90a8455f00c}{L\+P\+Primal\+Dual\+Interior\+Point\+Kernel}} (const Eigen\+::\+Vector\+Xd \&c, const Eigen\+::\+Matrix\+Xd \&A, const Eigen\+::\+Vector\+Xd \&b, Eigen\+::\+Vector\+Xd \&x, double alpha, double sigma, double error)
+\item 
+double \mbox{\hyperlink{_my_optimalize_8cpp_a8c35bc416dd3997d6e06226951914487}{Q\+P\+Conjugate\+Gradient\+Kernel}} (const Eigen\+::\+Matrix\+Xd \&G, const Eigen\+::\+Vector\+Xd \&p, Eigen\+::\+Vector\+Xd \&x)
+\item 
+double \mbox{\hyperlink{_my_optimalize_8cpp_ab763d18139693d13cc6f9af551e2eb99}{Q\+P\+A\+S\+M\+Kernel}} (const Eigen\+::\+Matrix\+Xd \&G, const Eigen\+::\+Matrix\+Xd \&A, const Eigen\+::\+Vector\+Xd \&p, const Eigen\+::\+Vector\+Xd \&b, Eigen\+::\+Vector\+Xd \&x)
+\item 
+double \mbox{\hyperlink{_my_optimalize_8cpp_a126b0e90db2fbed5440f75f28b912746}{Q\+P\+Lagrange\+Kernel}} (const Eigen\+::\+Matrix\+Xd \&G, const Eigen\+::\+Matrix\+Xd \&A, const Eigen\+::\+Vector\+Xd \&p, const Eigen\+::\+Vector\+Xd \&b, Eigen\+::\+Vector\+Xd \&x)
+\end{DoxyCompactItemize}
+\doxysubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+constexpr double \mbox{\hyperlink{_my_optimalize_8cpp_ab8c174f3f9d98977cb2f6bda2a6f29c8}{zero\+Act}} = 1e-\/10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{_my_optimalize_8cpp_ad7945e2b508cf7c6d0fc2cf6d84f9dd9}\label{_my_optimalize_8cpp_ad7945e2b508cf7c6d0fc2cf6d84f9dd9}} 
+\index{MyOptimalize.cpp@{MyOptimalize.cpp}!DEIGEN\_MPL2\_ONLY@{DEIGEN\_MPL2\_ONLY}}
+\index{DEIGEN\_MPL2\_ONLY@{DEIGEN\_MPL2\_ONLY}!MyOptimalize.cpp@{MyOptimalize.cpp}}
+\doxysubsubsection{\texorpdfstring{DEIGEN\_MPL2\_ONLY}{DEIGEN\_MPL2\_ONLY}}
+{\footnotesize\ttfamily \#define D\+E\+I\+G\+E\+N\+\_\+\+M\+P\+L2\+\_\+\+O\+N\+LY}
+
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{_my_optimalize_8cpp_a3f6d372d60229b45eebbdda736c1b7d8}\label{_my_optimalize_8cpp_a3f6d372d60229b45eebbdda736c1b7d8}} 
+\index{MyOptimalize.cpp@{MyOptimalize.cpp}!LPBarrierInteriorPointKernel@{LPBarrierInteriorPointKernel}}
+\index{LPBarrierInteriorPointKernel@{LPBarrierInteriorPointKernel}!MyOptimalize.cpp@{MyOptimalize.cpp}}
+\doxysubsubsection{\texorpdfstring{LPBarrierInteriorPointKernel()}{LPBarrierInteriorPointKernel()}}
+{\footnotesize\ttfamily double L\+P\+Barrier\+Interior\+Point\+Kernel (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{c,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{A,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{b,  }\item[{Eigen\+::\+Vector\+Xd \&}]{x,  }\item[{double}]{t,  }\item[{double}]{mu,  }\item[{double}]{error }\end{DoxyParamCaption})}
+
+障碍内点法的核心函数 \begin{DoxyItemize}
+\item 用于求解不等式约束线性优化问题\end{DoxyItemize}
+\[ \begin{aligned} \min_{x,y}\quad&c^{T}x\\ s.t.\quad&A^{T}x\geq b \end{aligned} \]
+
+
+\begin{DoxyParams}{参数}
+{\em c} & 目标函数系数向量(Eigen向量) \\
+\hline
+{\em A} & 约束条件系数矩阵(Eigen矩阵) \\
+\hline
+{\em b} & 约束条件常数向量(Eigen向量) \\
+\hline
+{\em x} & 决策变量优化结果向量(Eigen向量)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+目标函数优化结果
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{待办事项}
+\item[\mbox{\hyperlink{todo__todo000006}{待办事项}}]暂无 \end{DoxyRefDesc}
+\mbox{\Hypertarget{_my_optimalize_8cpp_af3a7d3362eaf6453409bd90a8455f00c}\label{_my_optimalize_8cpp_af3a7d3362eaf6453409bd90a8455f00c}} 
+\index{MyOptimalize.cpp@{MyOptimalize.cpp}!LPPrimalDualInteriorPointKernel@{LPPrimalDualInteriorPointKernel}}
+\index{LPPrimalDualInteriorPointKernel@{LPPrimalDualInteriorPointKernel}!MyOptimalize.cpp@{MyOptimalize.cpp}}
+\doxysubsubsection{\texorpdfstring{LPPrimalDualInteriorPointKernel()}{LPPrimalDualInteriorPointKernel()}}
+{\footnotesize\ttfamily double L\+P\+Primal\+Dual\+Interior\+Point\+Kernel (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{c,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{A,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{b,  }\item[{Eigen\+::\+Vector\+Xd \&}]{x,  }\item[{double}]{alpha,  }\item[{double}]{sigma,  }\item[{double}]{error }\end{DoxyParamCaption})}
+
+原始对偶内点法的核心函数 \begin{DoxyItemize}
+\item 用于求解等式约束线性优化问题\end{DoxyItemize}
+\[ \begin{aligned} \min_{x,y}\quad&c^{T}x\\ s.t.\quad&A^{T}x=b \end{aligned} \]
+
+
+\begin{DoxyParams}{参数}
+{\em c} & 目标函数系数向量(Eigen向量) \\
+\hline
+{\em A} & 约束条件系数矩阵(Eigen矩阵) \\
+\hline
+{\em b} & 约束条件常数向量(Eigen向量) \\
+\hline
+{\em x} & 决策变量优化结果向量(Eigen向量) \\
+\hline
+{\em alpha} & 牛顿法步长(0$<$alpha$<$1，若alpha$<$=0将自动选择步长) \\
+\hline
+{\em sigma} & 牛顿法下降因子(0$<$=sigma$<$1，若sigma$<$0将自动选择下降因子) \\
+\hline
+{\em error} & 牛顿法最大迭代误差(原问题-\/对偶问题的对偶间隙)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+目标函数优化结果(当无解时返回\+I\+N\+F\+I\+TY)
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{待办事项}
+\item[\mbox{\hyperlink{todo__todo000007}{待办事项}}]暂无 \end{DoxyRefDesc}
+\mbox{\Hypertarget{_my_optimalize_8cpp_ab763d18139693d13cc6f9af551e2eb99}\label{_my_optimalize_8cpp_ab763d18139693d13cc6f9af551e2eb99}} 
+\index{MyOptimalize.cpp@{MyOptimalize.cpp}!QPASMKernel@{QPASMKernel}}
+\index{QPASMKernel@{QPASMKernel}!MyOptimalize.cpp@{MyOptimalize.cpp}}
+\doxysubsubsection{\texorpdfstring{QPASMKernel()}{QPASMKernel()}}
+{\footnotesize\ttfamily double Q\+P\+A\+S\+M\+Kernel (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{G,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{A,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{p,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{b,  }\item[{Eigen\+::\+Vector\+Xd \&}]{x }\end{DoxyParamCaption})}
+
+有效约束集法的核心函数 \begin{DoxyItemize}
+\item 用于求解不等式约束二次优化问题\end{DoxyItemize}
+\[ \begin{aligned} \min_{x,y}\quad&\frac{1}{2}x^{T}Gx+p^{T}x\\ s.t.\quad&A^{T}x\geq b \end{aligned} \]
+
+
+\begin{DoxyParams}{参数}
+{\em G} & 目标函数二次项及交叉乘项系数矩阵(Eigen矩阵) \\
+\hline
+{\em A} & 约束条件系数矩阵(Eigen矩阵) \\
+\hline
+{\em p} & 目标函数一次项系数矩阵(Eigen向量) \\
+\hline
+{\em b} & 约束条件常数向量(Eigen向量) \\
+\hline
+{\em x} & 决策变量优化结果向量(Eigen向量)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+目标函数优化结果
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{待办事项}
+\item[\mbox{\hyperlink{todo__todo000009}{待办事项}}]暂无 \end{DoxyRefDesc}
+\mbox{\Hypertarget{_my_optimalize_8cpp_a8c35bc416dd3997d6e06226951914487}\label{_my_optimalize_8cpp_a8c35bc416dd3997d6e06226951914487}} 
+\index{MyOptimalize.cpp@{MyOptimalize.cpp}!QPConjugateGradientKernel@{QPConjugateGradientKernel}}
+\index{QPConjugateGradientKernel@{QPConjugateGradientKernel}!MyOptimalize.cpp@{MyOptimalize.cpp}}
+\doxysubsubsection{\texorpdfstring{QPConjugateGradientKernel()}{QPConjugateGradientKernel()}}
+{\footnotesize\ttfamily double Q\+P\+Conjugate\+Gradient\+Kernel (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{G,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{p,  }\item[{Eigen\+::\+Vector\+Xd \&}]{x }\end{DoxyParamCaption})}
+
+共轭梯度法的核心函数 \begin{DoxyItemize}
+\item 只能用于求解\+G矩阵正定对称的无约束二次优化问题\end{DoxyItemize}
+\[ \begin{aligned} \min_{x,y}\quad&\frac{1}{2}x^{T}Gx+p^{T}x\\ s.t.\quad&\quad \end{aligned} \]
+
+
+\begin{DoxyParams}{参数}
+{\em G} & 目标函数二次项及交叉乘项系数矩阵(Eigen矩阵)(对称正定) \\
+\hline
+{\em p} & 目标函数一次项系数向量(Eigen向量) \\
+\hline
+{\em x} & 决策变量优化结果向量(Eigen向量)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+目标函数优化结果
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{待办事项}
+\item[\mbox{\hyperlink{todo__todo000008}{待办事项}}]暂无 \end{DoxyRefDesc}
+\mbox{\Hypertarget{_my_optimalize_8cpp_a126b0e90db2fbed5440f75f28b912746}\label{_my_optimalize_8cpp_a126b0e90db2fbed5440f75f28b912746}} 
+\index{MyOptimalize.cpp@{MyOptimalize.cpp}!QPLagrangeKernel@{QPLagrangeKernel}}
+\index{QPLagrangeKernel@{QPLagrangeKernel}!MyOptimalize.cpp@{MyOptimalize.cpp}}
+\doxysubsubsection{\texorpdfstring{QPLagrangeKernel()}{QPLagrangeKernel()}}
+{\footnotesize\ttfamily double Q\+P\+Lagrange\+Kernel (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{G,  }\item[{const Eigen\+::\+Matrix\+Xd \&}]{A,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{p,  }\item[{const Eigen\+::\+Vector\+Xd \&}]{b,  }\item[{Eigen\+::\+Vector\+Xd \&}]{x }\end{DoxyParamCaption})}
+
+拉格朗日法的核心函数 \begin{DoxyItemize}
+\item 用于求解等式约束二次优化问题\end{DoxyItemize}
+\[ \begin{aligned} \min_{x,y}\quad&\frac{1}{2}x^{T}Gx+p^{T}x\\ s.t.\quad&A^{T}x=b \end{aligned} \]
+
+
+\begin{DoxyParams}{参数}
+{\em G} & 目标函数二次项及交叉乘项系数矩阵(Eigen矩阵) \\
+\hline
+{\em A} & 约束条件系数矩阵(Eigen矩阵) \\
+\hline
+{\em p} & 目标函数一次项系数矩阵(Eigen向量) \\
+\hline
+{\em b} & 约束条件常数向量(Eigen向量) \\
+\hline
+{\em x} & 决策变量优化结果向量(Eigen向量)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+目标函数优化结果
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{待办事项}
+\item[\mbox{\hyperlink{todo__todo000010}{待办事项}}]暂无 \end{DoxyRefDesc}
+
+
+\doxysubsection{变量说明}
+\mbox{\Hypertarget{_my_optimalize_8cpp_ab8c174f3f9d98977cb2f6bda2a6f29c8}\label{_my_optimalize_8cpp_ab8c174f3f9d98977cb2f6bda2a6f29c8}} 
+\index{MyOptimalize.cpp@{MyOptimalize.cpp}!zeroAct@{zeroAct}}
+\index{zeroAct@{zeroAct}!MyOptimalize.cpp@{MyOptimalize.cpp}}
+\doxysubsubsection{\texorpdfstring{zeroAct}{zeroAct}}
+{\footnotesize\ttfamily constexpr double zero\+Act = 1e-\/10\hspace{0.3cm}{\ttfamily [constexpr]}}
+

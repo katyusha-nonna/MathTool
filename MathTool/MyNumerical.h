@@ -1,16 +1,19 @@
+/*! \file MyNumerical.h */
+
 #pragma once
 
 #include <string>
 #include <math.h>
 #include <assert.h>
+#include <time.h>
 #include <vector>
 #include <iostream>
 #include <algorithm>
 #include <functional>
-#include "MySprase.h"
+#include <random>
 
 // author: Katyusha
-// date: 2019/11/22
+// date: 2020/05/26
 
 // 包含如下基础数据结构
 // 1 区间Interval(TX 只允许是整型/浮点类型)
@@ -22,6 +25,8 @@
 // 1-1 三次样条插值
 
 // 2 最优逼近类
+// 2-1 多元线性/一元线性/一元正交最优平方逼近(最小二乘法)
+// 2-2 一元最优一致逼近(Remes算法)
 
 // 3 数值微积分类
 // 3-1 龙贝格积分法
@@ -89,14 +94,10 @@ namespace Utility
 
 			}
 			Interval(std::pair<TX, bool> x1, std::pair<TX, bool> x2)
-				: _begin(std::move(x1)), _end(std::move(x2))
+				: _begin(x1), _end(x2)
 			{
 
 			}
-			//Interval(std::initializer_list<std::pair<TX, bool> > list)
-			//{
-			//	
-			//}
 		};
 
 
@@ -128,22 +129,22 @@ namespace Utility
 			// 添加新分段
 			void AddSegment(Interval<TX> inter, std::function<TY(TX)> fun, std::string des="")
 			{
-				_Segments.emplace_back(std::move(inter));
-				_Functions.emplace_back(std::move(fun));
-				_Description.emplace_back(std::move(des));
+				_Segments.emplace_back(inter);
+				_Functions.emplace_back(fun);
+				_Description.emplace_back(des);
 				_NumSegment++;
 			}
 			void AddSegment(size_t offSet, Interval<TX> inter, std::function<TY(TX)> fun, std::string des = "")
 			{
 				if (offSet >= _NumSegment)
 				{
-					AddSegment(std::move(inter), std::move(fun), std::move(des));
+					AddSegment(inter, fun, des);
 				}
 				else
 				{
-					_Segments[offSet] = std::move(inter);
-					_Functions[offSet] = std::move(fun);
-					_Description[offSet] = std::move(des);
+					_Segments[offSet] = inter;
+					_Functions[offSet] = fun;
+					_Description[offSet] = des;
 				}
 			}
 			// 清除分段函数
@@ -189,14 +190,27 @@ namespace Utility
 
 		// 三次样条插值法
 		// 参考《计算方法》(李乃成、梅立泉著，科学出版社)
-		SegmentFunction<double, double> CubicSplineInterpolation(std::vector<std::pair<double, double> > points, std::pair<double, double> conditions);
-
-		// 龙贝格积分法收敛精度
-		constexpr double RombergConvergeLimit = 1e-12;
+		//SegmentFunction<double, double> CubicSplineInterpolation(std::vector<std::pair<double, double> > points, std::pair<double, double> conditions);
 
 		// 龙贝格积分法
 		// 参考《计算方法》(李乃成、梅立泉著，科学出版社)
-		double RombergIntegration(const double begin, const double end, std::function<double(double)> fun, const double converge = RombergConvergeLimit);
+		double RombergIntegration(const double begin, const double end, std::function<double(double)> fun, const double converge);
+
+		// 最优平方逼近类
+		// 参考《计算方法》(李乃成、梅立泉著，科学出版社)
+		// 默认为多项式形式的一元最小二乘拟合
+		std::vector<double> LeastSquareFitting(std::vector<double>& v, std::vector<double>& b, int n);
+		// 允许自定义正交函数和权值的一元最小二乘拟合
+		std::vector<double> LeastSquareFitting(std::vector<double>& v, std::vector<double>& b,
+			std::vector<std::function<double(double)> >& f, std::vector<double>& w);
+		// 多元线性最小二乘拟合
+		std::vector<double> MutliLinearLeastSquareFitting(std::vector<double>& A, std::vector<double>& b, int n, int m);
+
+		// 最优一致逼近类
+		// 参考《计算方法》(李乃成、梅立泉著，科学出版社)
+		// 默认为多项式形式的一元最优一致逼近(Remes算法)
+		std::vector<double> BestUniformApproximation(std::function<double(double)> f,
+			double begin, double end, int n, int maxCount, double error);
 	}
 }
 

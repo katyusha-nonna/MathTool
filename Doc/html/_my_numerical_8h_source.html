@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MathTool: MathTool/MyNumerical.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MathTool
+   &#160;<span id="projectnumber">V0.1</span>
+   </div>
+   <div id="projectbrief">练习用的一个数值运算库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_my_numerical_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">MyNumerical.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_my_numerical_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// author: Katyusha</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// date: 2020/05/26</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// 包含如下基础数据结构</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// 1 区间Interval(TX 只允许是整型/浮点类型)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// 2 分段函数SegmentFunction(定义域连续)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// 包含以下数值算法</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// 1 插值类</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// 1-1 三次样条插值</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// 2 最优逼近类</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// 2-1 多元线性/一元线性/一元正交最优平方逼近(最小二乘法)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// 2-2 一元最优一致逼近(Remes算法)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// 3 数值微积分类</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// 3-1 龙贝格积分法</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifndef MYNUMERICAL_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="_my_numerical_8h.html#acaab07def18736f49431f36fcdbfa431">   36</a></span>&#160;<span class="preprocessor">#define MYNUMERICAL_H</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespace_utility.html">   38</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_utility.html">Utility</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="namespace_utility_1_1_numerical.html">   40</a></span>&#160;    <span class="keyword">namespace </span>Numerical</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// 基础数据结构：区间Interval(TX 只允许是整型/浮点类型)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> TX, std::enable_if_t&lt;std::is_<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span>_v&lt;TX&gt; || std::is_<span class="keywordtype">int</span>egral_v&lt;TX&gt;, <span class="keywordtype">int</span>&gt; = 0 &gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_interval.html">   44</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_utility_1_1_numerical_1_1_interval.html">Interval</a></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">// 左端点(true表示闭区间，false表示开区间)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            std::pair&lt;TX, bool&gt; _begin;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">// 右端点(true表示闭区间，false表示开区间)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            std::pair&lt;TX, bool&gt; _end;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">// 返回区间左端点</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_interval.html#a754c5a944adada5334de96a76039c712">   53</a></span>&#160;            std::pair&lt;TX, bool&gt; <a class="code" href="class_utility_1_1_numerical_1_1_interval.html#a754c5a944adada5334de96a76039c712">Begin</a>() { <span class="keywordflow">return</span> _begin; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// 设置区间左端点</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_interval.html#ac15bb99f4a5d5fecc46a3fdd70bd2d56">   55</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_utility_1_1_numerical_1_1_interval.html#ac15bb99f4a5d5fecc46a3fdd70bd2d56">Begin</a>(TX x1, <span class="keywordtype">bool</span> isClosed) { _begin = { x1, isClosed }; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="comment">// 返回区间右端点</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_interval.html#ae5c3ec5f77b8c7aa1cbba2503286ec6f">   57</a></span>&#160;            std::pair&lt;TX, bool&gt; <a class="code" href="class_utility_1_1_numerical_1_1_interval.html#ae5c3ec5f77b8c7aa1cbba2503286ec6f">End</a>() { <span class="keywordflow">return</span> _end; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">// 设置区间右端点</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_interval.html#aa86098647fa90fc81ea3c65627c7fc31">   59</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_utility_1_1_numerical_1_1_interval.html#aa86098647fa90fc81ea3c65627c7fc31">End</a>(TX x2, <span class="keywordtype">bool</span> isClosed) { _end = { x2, isClosed }; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// 判断是否在区间内</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_interval.html#a2953afcc7ddacdc0e464359ad91d2c80">   61</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="class_utility_1_1_numerical_1_1_interval.html#a2953afcc7ddacdc0e464359ad91d2c80">Contain</a>(TX x)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="comment">// 判断是否在左端点的右侧</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                _begin.second ?</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    result = result &amp;&amp; x &gt;= _begin.first : result = result &amp;&amp; x &gt; _begin.first;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="comment">// 判断是否在右端点左侧</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                _end.second ?</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    result = result &amp;&amp; x &lt;= _end.first : result = result &amp;&amp; x &lt; _end.first;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="comment">// 打印区间</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_interval.html#ab13d0671594342aacbe3dbe11ff83060">   73</a></span>&#160;            std::string <a class="code" href="class_utility_1_1_numerical_1_1_interval.html#ab13d0671594342aacbe3dbe11ff83060">Print</a>()</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                std::string result;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="comment">// 判断左端点开闭</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                _begin.second ?</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    result += <span class="stringliteral">&quot;[&quot;</span> : result += <span class="stringliteral">&quot;(&quot;</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="comment">// 添加区间</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                result += std::to_string(_begin.first) + <span class="stringliteral">&quot;, &quot;</span> + std::to_string(_end.first);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="comment">// 判断右端点开闭</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                _end.second ?</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    result += <span class="stringliteral">&quot;]&quot;</span> : result += <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">return</span> std::move(result);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_interval.html#a24fc0c4463f7f312161b96aff53f4075">   87</a></span>&#160;            <a class="code" href="class_utility_1_1_numerical_1_1_interval.html#a24fc0c4463f7f312161b96aff53f4075">Interval</a>()</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_interval.html#a0c2c7e8a3538ad05f559bf7aaad65aba">   91</a></span>&#160;            <a class="code" href="class_utility_1_1_numerical_1_1_interval.html#a0c2c7e8a3538ad05f559bf7aaad65aba">Interval</a>(TX x1, TX x2)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                : _begin(x1, false), _end(x2, false)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_interval.html#aabe07ccf4ecc3583e7a0e9daa3c47eae">   96</a></span>&#160;            <a class="code" href="class_utility_1_1_numerical_1_1_interval.html#aabe07ccf4ecc3583e7a0e9daa3c47eae">Interval</a>(std::pair&lt;TX, bool&gt; x1, std::pair&lt;TX, bool&gt; x2)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                : _begin(x1), _end(x2)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        };</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">// 基础数据结构：分段函数SegmentFunction</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// 注意，不保证分段的顺序</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> TX, <span class="keyword">typename</span> TY&gt;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_segment_function.html">  107</a></span>&#160;        <span class="keyword">class </span><a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html">SegmentFunction</a></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="comment">// 存放分段定义域 [a, b]</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            std::vector&lt;Interval&lt;TX&gt; &gt; _Segments;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="comment">// 存放分段函数 Fun: [a, b] -&gt; R</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            std::vector&lt;std::function&lt;TY(TX)&gt; &gt; _Functions;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="comment">// 存放分段函数的描述</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            std::vector&lt;std::string&gt; _Description;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment">// 总分段数</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _NumSegment;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="comment">// 返回时所在分段的Offset</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_segment_function.html#a06fcfed802752673c34410b5cf92eb4c">  120</a></span>&#160;            <span class="keywordtype">size_t</span> <a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#a06fcfed802752673c34410b5cf92eb4c">GetSegment</a>(TX x)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="keywordtype">size_t</span> result = 0;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">while</span> (!_Segments[result].Contain(x))</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    result++;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="comment">// 添加新分段</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_segment_function.html#add4a2aa6159f8df00c0ad7f32c0c5dcb">  130</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#add4a2aa6159f8df00c0ad7f32c0c5dcb">AddSegment</a>(<a class="code" href="class_utility_1_1_numerical_1_1_interval.html">Interval&lt;TX&gt;</a> inter, std::function&lt;TY(TX)&gt; fun, std::string des=<span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                _Segments.emplace_back(inter);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                _Functions.emplace_back(fun);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                _Description.emplace_back(des);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                _NumSegment++;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            }</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_segment_function.html#a8505a5bfb201c5b9227e6c1ed6111a09">  137</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#a8505a5bfb201c5b9227e6c1ed6111a09">AddSegment</a>(<span class="keywordtype">size_t</span> offSet, <a class="code" href="class_utility_1_1_numerical_1_1_interval.html">Interval&lt;TX&gt;</a> inter, std::function&lt;TY(TX)&gt; fun, std::string des = <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                <span class="keywordflow">if</span> (offSet &gt;= _NumSegment)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    <a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#add4a2aa6159f8df00c0ad7f32c0c5dcb">AddSegment</a>(inter, fun, des);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                    _Segments[offSet] = inter;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    _Functions[offSet] = fun;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                    _Description[offSet] = des;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="comment">// 清除分段函数</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_segment_function.html#a7905271186c1fed14069ff57d4bed389">  151</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#a7905271186c1fed14069ff57d4bed389">Clear</a>()</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                _Segments.clear();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                _Functions.clear();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                _Description.clear();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                _NumSegment = 0;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="comment">// 重载operator()</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="comment">// 警告，不检查定义域</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_segment_function.html#ae8f55841e3d98c21fdef3f83b5ade164">  160</a></span>&#160;            TY <a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#ae8f55841e3d98c21fdef3f83b5ade164">operator() </a>(TX x)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="keywordflow">return</span> _Functions[<a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#a06fcfed802752673c34410b5cf92eb4c">GetSegment</a>(x)](x);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="comment">// 打印分段函数</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_segment_function.html#a0bf9af90ddac95c5f4cd02876db8f360">  165</a></span>&#160;            std::string <a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#a0bf9af90ddac95c5f4cd02876db8f360">Print</a>()</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                std::string result(<span class="stringliteral">&quot;Function:\n&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> seg = 0; seg &lt; _NumSegment; seg++)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    result += <span class="stringliteral">&quot;\t&quot;</span> + _Description[seg] + <span class="stringliteral">&quot; : &quot;</span> + _Segments[seg].Print() + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keywordflow">return</span> std::move(result);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="comment">// 构造函数</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_segment_function.html#ad6824359979025eae63321109f6b0f11">  176</a></span>&#160;            <a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#ad6824359979025eae63321109f6b0f11">SegmentFunction</a>()</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            }</div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="class_utility_1_1_numerical_1_1_segment_function.html#a5eec35626326d866852b3208c0aedeb6">  180</a></span>&#160;            <a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#a5eec35626326d866852b3208c0aedeb6">SegmentFunction</a>(<span class="keywordtype">int</span> numSegment)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                : _NumSegment(numSegment &gt; 0 ? numSegment : 0)</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                _Segments = std::vector&lt;Interval&lt;TX&gt; &gt;(_NumSegment);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                _Functions = std::vector&lt;std::function&lt;TY(TX)&gt; &gt;(_NumSegment);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                _Description = std::vector&lt;std::string&gt;(_NumSegment);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="comment">// 禁止列表初始化</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <a class="code" href="class_utility_1_1_numerical_1_1_segment_function.html#ad6824359979025eae63321109f6b0f11">SegmentFunction</a>(std::initializer_list&lt;std::pair&lt;<a class="code" href="class_utility_1_1_numerical_1_1_interval.html">Interval&lt;TX&gt;</a>, std::function&lt;TY(TX)&gt; &gt; &gt;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        };</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">// 三次样条插值法</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">// 参考《计算方法》(李乃成、梅立泉著，科学出版社)</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">//SegmentFunction&lt;double, double&gt; CubicSplineInterpolation(std::vector&lt;std::pair&lt;double, double&gt; &gt; points, std::pair&lt;double, double&gt; conditions);</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="comment">// 龙贝格积分法</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="comment">// 参考《计算方法》(李乃成、梅立泉著，科学出版社)</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="namespace_utility_1_1_numerical.html#a9af1d3a02a8d82bbb20ac1b16ec9d44b">RombergIntegration</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> begin, <span class="keyword">const</span> <span class="keywordtype">double</span> end, std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>)&gt; fun, <span class="keyword">const</span> <span class="keywordtype">double</span> converge);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="comment">// 最优平方逼近类</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="comment">// 参考《计算方法》(李乃成、梅立泉著，科学出版社)</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment">// 默认为多项式形式的一元最小二乘拟合</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        std::vector&lt;double&gt; <a class="code" href="namespace_utility_1_1_numerical.html#a958739df886f3cdbf379488888aa4ba9">LeastSquareFitting</a>(std::vector&lt;double&gt;&amp; v, std::vector&lt;double&gt;&amp; b, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="comment">// 允许自定义正交函数和权值的一元最小二乘拟合</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        std::vector&lt;double&gt; <a class="code" href="namespace_utility_1_1_numerical.html#a958739df886f3cdbf379488888aa4ba9">LeastSquareFitting</a>(std::vector&lt;double&gt;&amp; v, std::vector&lt;double&gt;&amp; b,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            std::vector&lt;std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>)&gt; &gt;&amp; f, std::vector&lt;double&gt;&amp; w);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">// 多元线性最小二乘拟合</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        std::vector&lt;double&gt; <a class="code" href="namespace_utility_1_1_numerical.html#abdc7139623bdae1909c9fc438a3ccf0a">MutliLinearLeastSquareFitting</a>(std::vector&lt;double&gt;&amp; A, std::vector&lt;double&gt;&amp; b, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> m);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="comment">// 最优一致逼近类</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="comment">// 参考《计算方法》(李乃成、梅立泉著，科学出版社)</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">// 默认为多项式形式的一元最优一致逼近(Remes算法)</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        std::vector&lt;double&gt; <a class="code" href="namespace_utility_1_1_numerical.html#aee3203d94e84c6e6638c63f9edf751dc">BestUniformApproximation</a>(std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>)&gt; f,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keywordtype">double</span> begin, <span class="keywordtype">double</span> end, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> maxCount, <span class="keywordtype">double</span> error);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anamespace_utility_html"><div class="ttname"><a href="namespace_utility.html">Utility</a></div><div class="ttdef"><b>Definition:</b> MyNumerical.h:38</div></div>
+<div class="ttc" id="a_math_tool_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="_math_tool_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> MathTool.cpp:5</div></div>
+<div class="ttc" id="anamespace_utility_1_1_numerical_html_abdc7139623bdae1909c9fc438a3ccf0a"><div class="ttname"><a href="namespace_utility_1_1_numerical.html#abdc7139623bdae1909c9fc438a3ccf0a">Utility::Numerical::MutliLinearLeastSquareFitting</a></div><div class="ttdeci">std::vector&lt; double &gt; MutliLinearLeastSquareFitting(std::vector&lt; double &gt; &amp;A, std::vector&lt; double &gt; &amp;b, int n, int m)</div><div class="ttdef"><b>Definition:</b> MyNumerical.cpp:214</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_segment_function_html_a5eec35626326d866852b3208c0aedeb6"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_segment_function.html#a5eec35626326d866852b3208c0aedeb6">Utility::Numerical::SegmentFunction::SegmentFunction</a></div><div class="ttdeci">SegmentFunction(int numSegment)</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:180</div></div>
+<div class="ttc" id="a_my_optimalize_8h_html"><div class="ttname"><a href="_my_optimalize_8h.html">MyOptimalize.h</a></div></div>
+<div class="ttc" id="a_my_numerical_8h_html"><div class="ttname"><a href="_my_numerical_8h.html">MyNumerical.h</a></div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_segment_function_html"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_segment_function.html">Utility::Numerical::SegmentFunction</a></div><div class="ttdef"><b>Definition:</b> MyNumerical.h:107</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_segment_function_html_a7905271186c1fed14069ff57d4bed389"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_segment_function.html#a7905271186c1fed14069ff57d4bed389">Utility::Numerical::SegmentFunction::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:151</div></div>
+<div class="ttc" id="a_my_numerical_8cpp_html_acac0aa5f9d13038311a76a9ba7f8f5b8"><div class="ttname"><a href="_my_numerical_8cpp.html#acac0aa5f9d13038311a76a9ba7f8f5b8">MaxPointNum</a></div><div class="ttdeci">constexpr int MaxPointNum</div><div class="ttdef"><b>Definition:</b> MyNumerical.cpp:10</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_segment_function_html_ae8f55841e3d98c21fdef3f83b5ade164"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_segment_function.html#ae8f55841e3d98c21fdef3f83b5ade164">Utility::Numerical::SegmentFunction::operator()</a></div><div class="ttdeci">TY operator()(TX x)</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:160</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_interval_html_ac15bb99f4a5d5fecc46a3fdd70bd2d56"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_interval.html#ac15bb99f4a5d5fecc46a3fdd70bd2d56">Utility::Numerical::Interval::Begin</a></div><div class="ttdeci">void Begin(TX x1, bool isClosed)</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:55</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_interval_html_a24fc0c4463f7f312161b96aff53f4075"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_interval.html#a24fc0c4463f7f312161b96aff53f4075">Utility::Numerical::Interval::Interval</a></div><div class="ttdeci">Interval()</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:87</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_segment_function_html_a0bf9af90ddac95c5f4cd02876db8f360"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_segment_function.html#a0bf9af90ddac95c5f4cd02876db8f360">Utility::Numerical::SegmentFunction::Print</a></div><div class="ttdeci">std::string Print()</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:165</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_segment_function_html_add4a2aa6159f8df00c0ad7f32c0c5dcb"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_segment_function.html#add4a2aa6159f8df00c0ad7f32c0c5dcb">Utility::Numerical::SegmentFunction::AddSegment</a></div><div class="ttdeci">void AddSegment(Interval&lt; TX &gt; inter, std::function&lt; TY(TX)&gt; fun, std::string des=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:130</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_interval_html_a2953afcc7ddacdc0e464359ad91d2c80"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_interval.html#a2953afcc7ddacdc0e464359ad91d2c80">Utility::Numerical::Interval::Contain</a></div><div class="ttdeci">bool Contain(TX x)</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:61</div></div>
+<div class="ttc" id="anamespace_utility_1_1_numerical_html_a958739df886f3cdbf379488888aa4ba9"><div class="ttname"><a href="namespace_utility_1_1_numerical.html#a958739df886f3cdbf379488888aa4ba9">Utility::Numerical::LeastSquareFitting</a></div><div class="ttdeci">std::vector&lt; double &gt; LeastSquareFitting(std::vector&lt; double &gt; &amp;v, std::vector&lt; double &gt; &amp;b, int n)</div><div class="ttdef"><b>Definition:</b> MyNumerical.cpp:137</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_interval_html_a754c5a944adada5334de96a76039c712"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_interval.html#a754c5a944adada5334de96a76039c712">Utility::Numerical::Interval::Begin</a></div><div class="ttdeci">std::pair&lt; TX, bool &gt; Begin()</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:53</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_interval_html_ae5c3ec5f77b8c7aa1cbba2503286ec6f"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_interval.html#ae5c3ec5f77b8c7aa1cbba2503286ec6f">Utility::Numerical::Interval::End</a></div><div class="ttdeci">std::pair&lt; TX, bool &gt; End()</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:57</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_interval_html"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_interval.html">Utility::Numerical::Interval</a></div><div class="ttdef"><b>Definition:</b> MyNumerical.h:44</div></div>
+<div class="ttc" id="anamespace_utility_1_1_numerical_html_a9af1d3a02a8d82bbb20ac1b16ec9d44b"><div class="ttname"><a href="namespace_utility_1_1_numerical.html#a9af1d3a02a8d82bbb20ac1b16ec9d44b">Utility::Numerical::RombergIntegration</a></div><div class="ttdeci">double RombergIntegration(const double begin, const double end, std::function&lt; double(double)&gt; fun, const double converge)</div><div class="ttdef"><b>Definition:</b> MyNumerical.cpp:31</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_segment_function_html_a06fcfed802752673c34410b5cf92eb4c"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_segment_function.html#a06fcfed802752673c34410b5cf92eb4c">Utility::Numerical::SegmentFunction::GetSegment</a></div><div class="ttdeci">size_t GetSegment(TX x)</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:120</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_interval_html_ab13d0671594342aacbe3dbe11ff83060"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_interval.html#ab13d0671594342aacbe3dbe11ff83060">Utility::Numerical::Interval::Print</a></div><div class="ttdeci">std::string Print()</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:73</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_segment_function_html_a8505a5bfb201c5b9227e6c1ed6111a09"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_segment_function.html#a8505a5bfb201c5b9227e6c1ed6111a09">Utility::Numerical::SegmentFunction::AddSegment</a></div><div class="ttdeci">void AddSegment(size_t offSet, Interval&lt; TX &gt; inter, std::function&lt; TY(TX)&gt; fun, std::string des=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:137</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_segment_function_html_ad6824359979025eae63321109f6b0f11"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_segment_function.html#ad6824359979025eae63321109f6b0f11">Utility::Numerical::SegmentFunction::SegmentFunction</a></div><div class="ttdeci">SegmentFunction()</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:176</div></div>
+<div class="ttc" id="anamespace_utility_1_1_numerical_html_aee3203d94e84c6e6638c63f9edf751dc"><div class="ttname"><a href="namespace_utility_1_1_numerical.html#aee3203d94e84c6e6638c63f9edf751dc">Utility::Numerical::BestUniformApproximation</a></div><div class="ttdeci">std::vector&lt; double &gt; BestUniformApproximation(std::function&lt; double(double)&gt; f, double begin, double end, int n, int maxCount, double error)</div><div class="ttdef"><b>Definition:</b> MyNumerical.cpp:249</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_interval_html_a0c2c7e8a3538ad05f559bf7aaad65aba"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_interval.html#a0c2c7e8a3538ad05f559bf7aaad65aba">Utility::Numerical::Interval::Interval</a></div><div class="ttdeci">Interval(TX x1, TX x2)</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:91</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_interval_html_aabe07ccf4ecc3583e7a0e9daa3c47eae"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_interval.html#aabe07ccf4ecc3583e7a0e9daa3c47eae">Utility::Numerical::Interval::Interval</a></div><div class="ttdeci">Interval(std::pair&lt; TX, bool &gt; x1, std::pair&lt; TX, bool &gt; x2)</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:96</div></div>
+<div class="ttc" id="aclass_utility_1_1_numerical_1_1_interval_html_aa86098647fa90fc81ea3c65627c7fc31"><div class="ttname"><a href="class_utility_1_1_numerical_1_1_interval.html#aa86098647fa90fc81ea3c65627c7fc31">Utility::Numerical::Interval::End</a></div><div class="ttdeci">void End(TX x2, bool isClosed)</div><div class="ttdef"><b>Definition:</b> MyNumerical.h:59</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_fb853615af48cfea4af8fc14d6676972.html">MathTool</a></li><li class="navelem"><a class="el" href="_my_numerical_8h.html">MyNumerical.h</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

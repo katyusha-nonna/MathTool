@@ -1,0 +1,183 @@
+\hypertarget{class_utility_1_1_symbolic_1_1_expr_tree}{}\doxysection{Utility\+::Symbolic\+::Expr\+Tree$<$ ET $>$ 模板类 参考}
+\label{class_utility_1_1_symbolic_1_1_expr_tree}\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+
+
+{\ttfamily \#include $<$My\+Symbolic.\+h$>$}
+
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_ae72f4ebf57b4f8d61faf20e45943dabb}{Clear\+Tree}} ()
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a0f6bd65c311ba0cc4c0fa1354fd900ee}{All\+Clear}} (bool clear\+Node=true, bool clear\+Op=true)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a32b5a2087e17534e003bc9e4b5ba0bcb}{Recursion\+Delete}} (\mbox{\hyperlink{struct_utility_1_1_symbolic_1_1_tree_node}{Tree\+Node}}$<$ ET $>$ $\ast$root\+For\+Del)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_aea4f352659f0af7e9dc2549d3d6dafc9}{Add\+Operator}} (std\+::string name, std\+::function$<$ ET(ET, ET)$>$ op)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a1d7a3767df6eb3055b79fed69428d5ae}{Add\+Operator}} (const std\+::map$<$ std\+::string, std\+::function$<$ ET(ET, ET)$>$ $>$ \&ops)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a90e425b15929851169a4c06b3ab8187f}{Add\+Operator}} (std\+::map$<$ std\+::string, std\+::function$<$ ET(ET, ET)$>$ $>$ \&\&ops)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a9961c3f57c797895c99225f2d92b3cd1}{Delete\+Operator}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a7e81d105f2dbcc48778c837015cabbf3}{Delete\+Operator}} ()
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_ac6908549dc78d75b7c91284867ab2923}{Add\+Comp}} (std\+::function$<$ bool(std\+::string, std\+::string)$>$ comp)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_ad675379540e6dc828d099b77a7f19fe7}{Add\+Data}} (std\+::string name, ET $\ast$value)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a31ea7951f800114737cd09f93c0f0ec6}{Add\+Data}} (const std\+::map$<$ std\+::string, ET $\ast$ $>$ \&values)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a6a0bba511e623d0d3d18c9fd83c7228d}{Add\+Data}} (std\+::map$<$ std\+::string, ET $\ast$ $>$ \&\&values)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a3c063f4c2e94299ae8f05a6fc1b3f83e}{Delete\+Data}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_ac5bb49c215c4e2e9c57b7469a42e6a1c}{Delete\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a7d6a0c691bdfa752f4ba3691d4619b6e}{Build\+From\+Infix\+Expr}} (std\+::stringstream \&input)
+\item 
+{\footnotesize template$<$typename TS $>$ }\\void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a5f959abe8fcc8a972f85d65314f2b795}{Print\+To\+Infix\+Expr}} (TS \&out)
+\item 
+ET \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_a504c8dce03cc9e226e000bf799f99a55}{Calcute}} ()
+\item 
+\mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree_aef1b91b61df239cd768e373b5011af76}{$\sim$\+Expr\+Tree}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_aef1b91b61df239cd768e373b5011af76}\label{class_utility_1_1_symbolic_1_1_expr_tree_aef1b91b61df239cd768e373b5011af76}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!````~ExprTree@{$\sim$ExprTree}}
+\index{````~ExprTree@{$\sim$ExprTree}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$ExprTree()}{~ExprTree()}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+\mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::$\sim$\mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Expr\+Tree}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_ac6908549dc78d75b7c91284867ab2923}\label{class_utility_1_1_symbolic_1_1_expr_tree_ac6908549dc78d75b7c91284867ab2923}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!AddComp@{AddComp}}
+\index{AddComp@{AddComp}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{AddComp()}{AddComp()}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Add\+Comp (\begin{DoxyParamCaption}\item[{std\+::function$<$ bool(std\+::string, std\+::string)$>$}]{comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a31ea7951f800114737cd09f93c0f0ec6}\label{class_utility_1_1_symbolic_1_1_expr_tree_a31ea7951f800114737cd09f93c0f0ec6}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!AddData@{AddData}}
+\index{AddData@{AddData}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{AddData()}{AddData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Add\+Data (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, ET $\ast$ $>$ \&}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a6a0bba511e623d0d3d18c9fd83c7228d}\label{class_utility_1_1_symbolic_1_1_expr_tree_a6a0bba511e623d0d3d18c9fd83c7228d}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!AddData@{AddData}}
+\index{AddData@{AddData}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{AddData()}{AddData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Add\+Data (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, ET $\ast$ $>$ \&\&}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_ad675379540e6dc828d099b77a7f19fe7}\label{class_utility_1_1_symbolic_1_1_expr_tree_ad675379540e6dc828d099b77a7f19fe7}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!AddData@{AddData}}
+\index{AddData@{AddData}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{AddData()}{AddData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Add\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{ET $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a1d7a3767df6eb3055b79fed69428d5ae}\label{class_utility_1_1_symbolic_1_1_expr_tree_a1d7a3767df6eb3055b79fed69428d5ae}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!AddOperator@{AddOperator}}
+\index{AddOperator@{AddOperator}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{AddOperator()}{AddOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Add\+Operator (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, std\+::function$<$ ET(ET, ET)$>$ $>$ \&}]{ops }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a90e425b15929851169a4c06b3ab8187f}\label{class_utility_1_1_symbolic_1_1_expr_tree_a90e425b15929851169a4c06b3ab8187f}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!AddOperator@{AddOperator}}
+\index{AddOperator@{AddOperator}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{AddOperator()}{AddOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Add\+Operator (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, std\+::function$<$ ET(ET, ET)$>$ $>$ \&\&}]{ops }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_aea4f352659f0af7e9dc2549d3d6dafc9}\label{class_utility_1_1_symbolic_1_1_expr_tree_aea4f352659f0af7e9dc2549d3d6dafc9}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!AddOperator@{AddOperator}}
+\index{AddOperator@{AddOperator}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{AddOperator()}{AddOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Add\+Operator (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::function$<$ ET(ET, ET)$>$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a0f6bd65c311ba0cc4c0fa1354fd900ee}\label{class_utility_1_1_symbolic_1_1_expr_tree_a0f6bd65c311ba0cc4c0fa1354fd900ee}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!AllClear@{AllClear}}
+\index{AllClear@{AllClear}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{AllClear()}{AllClear()}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::All\+Clear (\begin{DoxyParamCaption}\item[{bool}]{clear\+Node = {\ttfamily true},  }\item[{bool}]{clear\+Op = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a7d6a0c691bdfa752f4ba3691d4619b6e}\label{class_utility_1_1_symbolic_1_1_expr_tree_a7d6a0c691bdfa752f4ba3691d4619b6e}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!BuildFromInfixExpr@{BuildFromInfixExpr}}
+\index{BuildFromInfixExpr@{BuildFromInfixExpr}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{BuildFromInfixExpr()}{BuildFromInfixExpr()}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Build\+From\+Infix\+Expr (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a504c8dce03cc9e226e000bf799f99a55}\label{class_utility_1_1_symbolic_1_1_expr_tree_a504c8dce03cc9e226e000bf799f99a55}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!Calcute@{Calcute}}
+\index{Calcute@{Calcute}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{Calcute()}{Calcute()}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+ET \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Calcute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_ae72f4ebf57b4f8d61faf20e45943dabb}\label{class_utility_1_1_symbolic_1_1_expr_tree_ae72f4ebf57b4f8d61faf20e45943dabb}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!ClearTree@{ClearTree}}
+\index{ClearTree@{ClearTree}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{ClearTree()}{ClearTree()}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Clear\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_ac5bb49c215c4e2e9c57b7469a42e6a1c}\label{class_utility_1_1_symbolic_1_1_expr_tree_ac5bb49c215c4e2e9c57b7469a42e6a1c}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!DeleteData@{DeleteData}}
+\index{DeleteData@{DeleteData}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{DeleteData()}{DeleteData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Delete\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a3c063f4c2e94299ae8f05a6fc1b3f83e}\label{class_utility_1_1_symbolic_1_1_expr_tree_a3c063f4c2e94299ae8f05a6fc1b3f83e}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!DeleteData@{DeleteData}}
+\index{DeleteData@{DeleteData}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{DeleteData()}{DeleteData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Delete\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a7e81d105f2dbcc48778c837015cabbf3}\label{class_utility_1_1_symbolic_1_1_expr_tree_a7e81d105f2dbcc48778c837015cabbf3}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!DeleteOperator@{DeleteOperator}}
+\index{DeleteOperator@{DeleteOperator}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{DeleteOperator()}{DeleteOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Delete\+Operator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a9961c3f57c797895c99225f2d92b3cd1}\label{class_utility_1_1_symbolic_1_1_expr_tree_a9961c3f57c797895c99225f2d92b3cd1}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!DeleteOperator@{DeleteOperator}}
+\index{DeleteOperator@{DeleteOperator}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{DeleteOperator()}{DeleteOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Delete\+Operator (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a5f959abe8fcc8a972f85d65314f2b795}\label{class_utility_1_1_symbolic_1_1_expr_tree_a5f959abe8fcc8a972f85d65314f2b795}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!PrintToInfixExpr@{PrintToInfixExpr}}
+\index{PrintToInfixExpr@{PrintToInfixExpr}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{PrintToInfixExpr()}{PrintToInfixExpr()}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+template$<$typename TS $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Print\+To\+Infix\+Expr (\begin{DoxyParamCaption}\item[{TS \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_symbolic_1_1_expr_tree_a32b5a2087e17534e003bc9e4b5ba0bcb}\label{class_utility_1_1_symbolic_1_1_expr_tree_a32b5a2087e17534e003bc9e4b5ba0bcb}} 
+\index{Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}!RecursionDelete@{RecursionDelete}}
+\index{RecursionDelete@{RecursionDelete}!Utility::Symbolic::ExprTree$<$ ET $>$@{Utility::Symbolic::ExprTree$<$ ET $>$}}
+\doxysubsubsection{\texorpdfstring{RecursionDelete()}{RecursionDelete()}}
+{\footnotesize\ttfamily template$<$typename ET $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_symbolic_1_1_expr_tree}{Utility\+::\+Symbolic\+::\+Expr\+Tree}}$<$ ET $>$\+::Recursion\+Delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_utility_1_1_symbolic_1_1_tree_node}{Tree\+Node}}$<$ ET $>$ $\ast$}]{root\+For\+Del }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Math\+Tool/\mbox{\hyperlink{_my_symbolic_8h}{My\+Symbolic.\+h}}\end{DoxyCompactItemize}

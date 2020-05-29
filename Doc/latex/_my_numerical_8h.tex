@@ -1,0 +1,52 @@
+\hypertarget{_my_numerical_8h}{}\doxysection{Math\+Tool/\+My\+Numerical.h 文件参考}
+\label{_my_numerical_8h}\index{MathTool/MyNumerical.h@{MathTool/MyNumerical.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+\doxysubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Utility\+::\+Numerical\+::\+Interval$<$ T\+X, $>$}}
+\item 
+class \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Utility\+::\+Numerical\+::\+Segment\+Function$<$ T\+X, T\+Y $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{命名空间}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_utility}{Utility}}
+\item 
+ \mbox{\hyperlink{namespace_utility_1_1_numerical}{Utility\+::\+Numerical}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_my_numerical_8h_acaab07def18736f49431f36fcdbfa431}{M\+Y\+N\+U\+M\+E\+R\+I\+C\+A\+L\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{namespace_utility_1_1_numerical_a9af1d3a02a8d82bbb20ac1b16ec9d44b}{Utility\+::\+Numerical\+::\+Romberg\+Integration}} (const double begin, const double end, std\+::function$<$ double(double)$>$ fun, const double converge)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{namespace_utility_1_1_numerical_a958739df886f3cdbf379488888aa4ba9}{Utility\+::\+Numerical\+::\+Least\+Square\+Fitting}} (std\+::vector$<$ double $>$ \&v, std\+::vector$<$ double $>$ \&b, int n)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{namespace_utility_1_1_numerical_a5932b4c8b0de61de2476bd46c2306b2d}{Utility\+::\+Numerical\+::\+Least\+Square\+Fitting}} (std\+::vector$<$ double $>$ \&v, std\+::vector$<$ double $>$ \&b, std\+::vector$<$ std\+::function$<$ double(double)$>$ $>$ \&f, std\+::vector$<$ double $>$ \&w)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{namespace_utility_1_1_numerical_abdc7139623bdae1909c9fc438a3ccf0a}{Utility\+::\+Numerical\+::\+Mutli\+Linear\+Least\+Square\+Fitting}} (std\+::vector$<$ double $>$ \&A, std\+::vector$<$ double $>$ \&b, int n, int m)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{namespace_utility_1_1_numerical_aee3203d94e84c6e6638c63f9edf751dc}{Utility\+::\+Numerical\+::\+Best\+Uniform\+Approximation}} (std\+::function$<$ double(double)$>$ f, double begin, double end, int n, int max\+Count, double error)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{_my_numerical_8h_acaab07def18736f49431f36fcdbfa431}\label{_my_numerical_8h_acaab07def18736f49431f36fcdbfa431}} 
+\index{MyNumerical.h@{MyNumerical.h}!MYNUMERICAL\_H@{MYNUMERICAL\_H}}
+\index{MYNUMERICAL\_H@{MYNUMERICAL\_H}!MyNumerical.h@{MyNumerical.h}}
+\doxysubsubsection{\texorpdfstring{MYNUMERICAL\_H}{MYNUMERICAL\_H}}
+{\footnotesize\ttfamily \#define M\+Y\+N\+U\+M\+E\+R\+I\+C\+A\+L\+\_\+H}
+

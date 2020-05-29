@@ -1,0 +1,101 @@
+\hypertarget{class_utility_1_1_numerical_1_1_segment_function}{}\doxysection{Utility\+::Numerical\+::Segment\+Function$<$ TX, TY $>$ 模板类 参考}
+\label{class_utility_1_1_numerical_1_1_segment_function}\index{Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}}
+
+
+{\ttfamily \#include $<$My\+Numerical.\+h$>$}
+
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function_a06fcfed802752673c34410b5cf92eb4c}{Get\+Segment}} (TX x)
+\item 
+void \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function_add4a2aa6159f8df00c0ad7f32c0c5dcb}{Add\+Segment}} (\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Interval}}$<$ TX $>$ inter, std\+::function$<$ TY(TX)$>$ fun, std\+::string des=\char`\"{}\char`\"{})
+\item 
+void \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function_a8505a5bfb201c5b9227e6c1ed6111a09}{Add\+Segment}} (size\+\_\+t off\+Set, \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Interval}}$<$ TX $>$ inter, std\+::function$<$ TY(TX)$>$ fun, std\+::string des=\char`\"{}\char`\"{})
+\item 
+void \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function_a7905271186c1fed14069ff57d4bed389}{Clear}} ()
+\item 
+TY \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function_ae8f55841e3d98c21fdef3f83b5ade164}{operator()}} (TX x)
+\item 
+std\+::string \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function_a0bf9af90ddac95c5f4cd02876db8f360}{Print}} ()
+\item 
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function_ad6824359979025eae63321109f6b0f11}{Segment\+Function}} ()
+\item 
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function_a5eec35626326d866852b3208c0aedeb6}{Segment\+Function}} (int num\+Segment)
+\item 
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function_a2bf190bc513aeb2f0c43aa45fd080568}{Segment\+Function}} (std\+::initializer\+\_\+list$<$ std\+::pair$<$ \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Interval}}$<$ TX $>$, std\+::function$<$ TY(TX)$>$ $>$ $>$)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_segment_function_ad6824359979025eae63321109f6b0f11}\label{class_utility_1_1_numerical_1_1_segment_function_ad6824359979025eae63321109f6b0f11}} 
+\index{Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}!SegmentFunction@{SegmentFunction}}
+\index{SegmentFunction@{SegmentFunction}!Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}}
+\doxysubsubsection{\texorpdfstring{SegmentFunction()}{SegmentFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename TX , typename TY $>$ \\
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Utility\+::\+Numerical\+::\+Segment\+Function}}$<$ TX, TY $>$\+::\mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Segment\+Function}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_segment_function_a5eec35626326d866852b3208c0aedeb6}\label{class_utility_1_1_numerical_1_1_segment_function_a5eec35626326d866852b3208c0aedeb6}} 
+\index{Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}!SegmentFunction@{SegmentFunction}}
+\index{SegmentFunction@{SegmentFunction}!Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}}
+\doxysubsubsection{\texorpdfstring{SegmentFunction()}{SegmentFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename TX , typename TY $>$ \\
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Utility\+::\+Numerical\+::\+Segment\+Function}}$<$ TX, TY $>$\+::\mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Segment\+Function}} (\begin{DoxyParamCaption}\item[{int}]{num\+Segment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_segment_function_a2bf190bc513aeb2f0c43aa45fd080568}\label{class_utility_1_1_numerical_1_1_segment_function_a2bf190bc513aeb2f0c43aa45fd080568}} 
+\index{Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}!SegmentFunction@{SegmentFunction}}
+\index{SegmentFunction@{SegmentFunction}!Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}}
+\doxysubsubsection{\texorpdfstring{SegmentFunction()}{SegmentFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename TX , typename TY $>$ \\
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Utility\+::\+Numerical\+::\+Segment\+Function}}$<$ TX, TY $>$\+::\mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Segment\+Function}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::pair$<$ \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Interval}}$<$ TX $>$, std\+::function$<$ TY(TX)$>$ $>$ $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_segment_function_add4a2aa6159f8df00c0ad7f32c0c5dcb}\label{class_utility_1_1_numerical_1_1_segment_function_add4a2aa6159f8df00c0ad7f32c0c5dcb}} 
+\index{Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}!AddSegment@{AddSegment}}
+\index{AddSegment@{AddSegment}!Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}}
+\doxysubsubsection{\texorpdfstring{AddSegment()}{AddSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TX , typename TY $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Utility\+::\+Numerical\+::\+Segment\+Function}}$<$ TX, TY $>$\+::Add\+Segment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Interval}}$<$ TX $>$}]{inter,  }\item[{std\+::function$<$ TY(TX)$>$}]{fun,  }\item[{std\+::string}]{des = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_segment_function_a8505a5bfb201c5b9227e6c1ed6111a09}\label{class_utility_1_1_numerical_1_1_segment_function_a8505a5bfb201c5b9227e6c1ed6111a09}} 
+\index{Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}!AddSegment@{AddSegment}}
+\index{AddSegment@{AddSegment}!Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}}
+\doxysubsubsection{\texorpdfstring{AddSegment()}{AddSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TX , typename TY $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Utility\+::\+Numerical\+::\+Segment\+Function}}$<$ TX, TY $>$\+::Add\+Segment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{off\+Set,  }\item[{\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Interval}}$<$ TX $>$}]{inter,  }\item[{std\+::function$<$ TY(TX)$>$}]{fun,  }\item[{std\+::string}]{des = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_segment_function_a7905271186c1fed14069ff57d4bed389}\label{class_utility_1_1_numerical_1_1_segment_function_a7905271186c1fed14069ff57d4bed389}} 
+\index{Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}!Clear@{Clear}}
+\index{Clear@{Clear}!Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily template$<$typename TX , typename TY $>$ \\
+void \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Utility\+::\+Numerical\+::\+Segment\+Function}}$<$ TX, TY $>$\+::Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_segment_function_a06fcfed802752673c34410b5cf92eb4c}\label{class_utility_1_1_numerical_1_1_segment_function_a06fcfed802752673c34410b5cf92eb4c}} 
+\index{Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}!GetSegment@{GetSegment}}
+\index{GetSegment@{GetSegment}!Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}}
+\doxysubsubsection{\texorpdfstring{GetSegment()}{GetSegment()}}
+{\footnotesize\ttfamily template$<$typename TX , typename TY $>$ \\
+size\+\_\+t \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Utility\+::\+Numerical\+::\+Segment\+Function}}$<$ TX, TY $>$\+::Get\+Segment (\begin{DoxyParamCaption}\item[{TX}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_segment_function_ae8f55841e3d98c21fdef3f83b5ade164}\label{class_utility_1_1_numerical_1_1_segment_function_ae8f55841e3d98c21fdef3f83b5ade164}} 
+\index{Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename TX , typename TY $>$ \\
+TY \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Utility\+::\+Numerical\+::\+Segment\+Function}}$<$ TX, TY $>$\+::operator() (\begin{DoxyParamCaption}\item[{TX}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_segment_function_a0bf9af90ddac95c5f4cd02876db8f360}\label{class_utility_1_1_numerical_1_1_segment_function_a0bf9af90ddac95c5f4cd02876db8f360}} 
+\index{Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}!Print@{Print}}
+\index{Print@{Print}!Utility::Numerical::SegmentFunction$<$ TX, TY $>$@{Utility::Numerical::SegmentFunction$<$ TX, TY $>$}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily template$<$typename TX , typename TY $>$ \\
+std\+::string \mbox{\hyperlink{class_utility_1_1_numerical_1_1_segment_function}{Utility\+::\+Numerical\+::\+Segment\+Function}}$<$ TX, TY $>$\+::Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Math\+Tool/\mbox{\hyperlink{_my_numerical_8h}{My\+Numerical.\+h}}\end{DoxyCompactItemize}

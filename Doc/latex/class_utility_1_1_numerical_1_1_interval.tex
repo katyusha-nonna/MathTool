@@ -1,0 +1,101 @@
+\hypertarget{class_utility_1_1_numerical_1_1_interval}{}\doxysection{Utility\+::Numerical\+::Interval$<$ TX, $>$ 模板类 参考}
+\label{class_utility_1_1_numerical_1_1_interval}\index{Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}}
+
+
+{\ttfamily \#include $<$My\+Numerical.\+h$>$}
+
+\doxysubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ TX, bool $>$ \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval_a754c5a944adada5334de96a76039c712}{Begin}} ()
+\item 
+void \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval_ac15bb99f4a5d5fecc46a3fdd70bd2d56}{Begin}} (TX x1, bool is\+Closed)
+\item 
+std\+::pair$<$ TX, bool $>$ \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval_ae5c3ec5f77b8c7aa1cbba2503286ec6f}{End}} ()
+\item 
+void \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval_aa86098647fa90fc81ea3c65627c7fc31}{End}} (TX x2, bool is\+Closed)
+\item 
+bool \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval_a2953afcc7ddacdc0e464359ad91d2c80}{Contain}} (TX x)
+\item 
+std\+::string \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval_ab13d0671594342aacbe3dbe11ff83060}{Print}} ()
+\item 
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval_a24fc0c4463f7f312161b96aff53f4075}{Interval}} ()
+\item 
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval_a0c2c7e8a3538ad05f559bf7aaad65aba}{Interval}} (TX x1, TX x2)
+\item 
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval_aabe07ccf4ecc3583e7a0e9daa3c47eae}{Interval}} (std\+::pair$<$ TX, bool $>$ x1, std\+::pair$<$ TX, bool $>$ x2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_interval_a24fc0c4463f7f312161b96aff53f4075}\label{class_utility_1_1_numerical_1_1_interval_a24fc0c4463f7f312161b96aff53f4075}} 
+\index{Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}!Interval@{Interval}}
+\index{Interval@{Interval}!Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}}
+\doxysubsubsection{\texorpdfstring{Interval()}{Interval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename TX , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$ T\+X $>$$\vert$$\vert$std\+::is\+\_\+integral\+\_\+v$<$ T\+X $>$, int $>$  = 0$>$ \\
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Utility\+::\+Numerical\+::\+Interval}}$<$ TX, $>$\+::\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Interval}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_interval_a0c2c7e8a3538ad05f559bf7aaad65aba}\label{class_utility_1_1_numerical_1_1_interval_a0c2c7e8a3538ad05f559bf7aaad65aba}} 
+\index{Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}!Interval@{Interval}}
+\index{Interval@{Interval}!Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}}
+\doxysubsubsection{\texorpdfstring{Interval()}{Interval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename TX , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$ T\+X $>$$\vert$$\vert$std\+::is\+\_\+integral\+\_\+v$<$ T\+X $>$, int $>$  = 0$>$ \\
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Utility\+::\+Numerical\+::\+Interval}}$<$ TX, $>$\+::\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Interval}} (\begin{DoxyParamCaption}\item[{TX}]{x1,  }\item[{TX}]{x2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_interval_aabe07ccf4ecc3583e7a0e9daa3c47eae}\label{class_utility_1_1_numerical_1_1_interval_aabe07ccf4ecc3583e7a0e9daa3c47eae}} 
+\index{Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}!Interval@{Interval}}
+\index{Interval@{Interval}!Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}}
+\doxysubsubsection{\texorpdfstring{Interval()}{Interval()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename TX , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$ T\+X $>$$\vert$$\vert$std\+::is\+\_\+integral\+\_\+v$<$ T\+X $>$, int $>$  = 0$>$ \\
+\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Utility\+::\+Numerical\+::\+Interval}}$<$ TX, $>$\+::\mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Interval}} (\begin{DoxyParamCaption}\item[{std\+::pair$<$ TX, bool $>$}]{x1,  }\item[{std\+::pair$<$ TX, bool $>$}]{x2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{成员函数说明}
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_interval_a754c5a944adada5334de96a76039c712}\label{class_utility_1_1_numerical_1_1_interval_a754c5a944adada5334de96a76039c712}} 
+\index{Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}!Begin@{Begin}}
+\index{Begin@{Begin}!Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}}
+\doxysubsubsection{\texorpdfstring{Begin()}{Begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TX , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$ T\+X $>$$\vert$$\vert$std\+::is\+\_\+integral\+\_\+v$<$ T\+X $>$, int $>$  = 0$>$ \\
+std\+::pair$<$TX, bool$>$ \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Utility\+::\+Numerical\+::\+Interval}}$<$ TX, $>$\+::Begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_interval_ac15bb99f4a5d5fecc46a3fdd70bd2d56}\label{class_utility_1_1_numerical_1_1_interval_ac15bb99f4a5d5fecc46a3fdd70bd2d56}} 
+\index{Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}!Begin@{Begin}}
+\index{Begin@{Begin}!Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}}
+\doxysubsubsection{\texorpdfstring{Begin()}{Begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TX , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$ T\+X $>$$\vert$$\vert$std\+::is\+\_\+integral\+\_\+v$<$ T\+X $>$, int $>$  = 0$>$ \\
+void \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Utility\+::\+Numerical\+::\+Interval}}$<$ TX, $>$\+::Begin (\begin{DoxyParamCaption}\item[{TX}]{x1,  }\item[{bool}]{is\+Closed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_interval_a2953afcc7ddacdc0e464359ad91d2c80}\label{class_utility_1_1_numerical_1_1_interval_a2953afcc7ddacdc0e464359ad91d2c80}} 
+\index{Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}!Contain@{Contain}}
+\index{Contain@{Contain}!Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}}
+\doxysubsubsection{\texorpdfstring{Contain()}{Contain()}}
+{\footnotesize\ttfamily template$<$typename TX , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$ T\+X $>$$\vert$$\vert$std\+::is\+\_\+integral\+\_\+v$<$ T\+X $>$, int $>$  = 0$>$ \\
+bool \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Utility\+::\+Numerical\+::\+Interval}}$<$ TX, $>$\+::Contain (\begin{DoxyParamCaption}\item[{TX}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_interval_ae5c3ec5f77b8c7aa1cbba2503286ec6f}\label{class_utility_1_1_numerical_1_1_interval_ae5c3ec5f77b8c7aa1cbba2503286ec6f}} 
+\index{Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}!End@{End}}
+\index{End@{End}!Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}}
+\doxysubsubsection{\texorpdfstring{End()}{End()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TX , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$ T\+X $>$$\vert$$\vert$std\+::is\+\_\+integral\+\_\+v$<$ T\+X $>$, int $>$  = 0$>$ \\
+std\+::pair$<$TX, bool$>$ \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Utility\+::\+Numerical\+::\+Interval}}$<$ TX, $>$\+::End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_interval_aa86098647fa90fc81ea3c65627c7fc31}\label{class_utility_1_1_numerical_1_1_interval_aa86098647fa90fc81ea3c65627c7fc31}} 
+\index{Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}!End@{End}}
+\index{End@{End}!Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}}
+\doxysubsubsection{\texorpdfstring{End()}{End()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TX , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$ T\+X $>$$\vert$$\vert$std\+::is\+\_\+integral\+\_\+v$<$ T\+X $>$, int $>$  = 0$>$ \\
+void \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Utility\+::\+Numerical\+::\+Interval}}$<$ TX, $>$\+::End (\begin{DoxyParamCaption}\item[{TX}]{x2,  }\item[{bool}]{is\+Closed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_utility_1_1_numerical_1_1_interval_ab13d0671594342aacbe3dbe11ff83060}\label{class_utility_1_1_numerical_1_1_interval_ab13d0671594342aacbe3dbe11ff83060}} 
+\index{Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}!Print@{Print}}
+\index{Print@{Print}!Utility::Numerical::Interval$<$ TX, $>$@{Utility::Numerical::Interval$<$ TX, $>$}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily template$<$typename TX , std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$ T\+X $>$$\vert$$\vert$std\+::is\+\_\+integral\+\_\+v$<$ T\+X $>$, int $>$  = 0$>$ \\
+std\+::string \mbox{\hyperlink{class_utility_1_1_numerical_1_1_interval}{Utility\+::\+Numerical\+::\+Interval}}$<$ TX, $>$\+::Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+Math\+Tool/\mbox{\hyperlink{_my_numerical_8h}{My\+Numerical.\+h}}\end{DoxyCompactItemize}

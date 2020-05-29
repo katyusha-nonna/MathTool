@@ -1,3 +1,5 @@
+/*! \file MySymbolic.h */
+
 #pragma once
 #include <algorithm>
 #include <memory>
